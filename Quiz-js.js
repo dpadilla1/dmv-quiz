@@ -1,9 +1,5 @@
  $(document).ready(function(){
-        var que;
-        var ans;
-        var right;
-        var i=0;
-        var score=0;
+        
         var que1={que:"WHAT IS THE BASIC SPEED LAW?",
             ans:["Never drive faster than is safe for current conditions","Never drive faster than the posted speed limits",
 			"Keep up with the flow of traffic","All of the above"],
@@ -35,17 +31,36 @@
 			ans:["Maintain normal driving speed","Stop and look for oncoming traffic",
 			"Yield to pedestrians","Increase your normal driving speed"],
 			right:"2"};
-        var que9={que:"_______________",
-			ans:["static","fixed","relative","absolute"],
+        var que9={que:"WHEN SHOULD YOU USE YOUR HEADLIGHTS?",
+			ans:["When you are having difficulty seeing cars around you","When you cannot see a car one mile ahead",
+			"One hour after sunset","All of the above"],
 			right:"0"};
-        var que10={que:"_______________",
-			ans:["inline","internal","external","Each have equal priority"],
-			right:"0"};
-		var que11={que:"Testing adding a new question.",
-			ans:["0", "1", "2", "3"],
+        var que10={que:"IF YOU EXIT A FREEWAY WITH A RAMP THAT CURVES DOWNHILL, YOU SHOULD:",
+			ans:["Slow to the posted speed limit for the freeway","Wait until you enter the curve before braking",
+			"Slow to a safe speed before the curve","Accelerate before the curve to prevent oversteer"],
+			right:"2"};
+		var que11={que:"WHO HAS THE RIGHT-OF-WAY AT AN INTERSECTION WITH NO CROSSWALKS?",
+			ans:["Pedestrians, but only with the green walk signal", "Vehicles, but they should slow down and be careful",
+			"Pedestrians always have the right-of-way", "Motorcyclists always have the right-of-way"],
+			right:"2"};
+		var que12={que:"IF YOU ARE STOPPED, INTENDING TO TURN LEFT, BUT ONCOMING VEHICLES ARE APPROACHING, YOU SHOULD:",
+			ans:["Turn immediately if there are no pedestrians nearby", "Give the oncoming vehicles the right-of-way",
+			"Turn because you have the right-of-way", "Keep driving, until you can find a safer place to make a turn"],
 			right:"1"};
-        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11];
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11,que12];
+		
+		//creates answer sheet
+		for (i = 0; i < 12; i++) {
+			$(".answers").append('<p class="qa">' + String(i+1) + '. ' + quelst[i].que + '</p>');
+			$(".answers").append('<p>Ans: <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
+		}
+		
+		
+		var i=0;
+        var score=0;
         var wrong=[];
+		
+		
         $("#start").click(function(){
             $(".front").hide();
             $("#sub").show();
