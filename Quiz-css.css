@@ -1,7 +1,6 @@
 body{
-            background-color:#FFF1DF
-;
-        }
+        background-color:#FFF1DF;
+}
         #next{
             display:none;
         }
@@ -167,7 +166,7 @@ body{
         .answers{
             display: none;
         }
-        #a1,#a2,#a3,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10{
-            color:#80ff00;
-            font-weight: bold;
-        }
+		.genAns{
+			color:#80ff00;
+			font-weight: bold;
+		}

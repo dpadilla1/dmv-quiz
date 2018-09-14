@@ -111,37 +111,11 @@
         $("#an").click(function(){
             $(".result").hide();
             $(".answers").show();
-            if((wrong.toString()).search("0")!=-1){
-                $("#a1").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("1")!=-1){
-                $("#a2").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("2")!=-1){
-                $("#a3").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("3")!=-1){
-                $("#a4").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("4")!=-1){
-                $("#a5").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("5")!=-1){
-                $("#a6").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("6")!=-1){
-                $("#a7").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("7")!=-1){
-                $("#a8").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("8")!=-1){
-                $("#a9").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("9")!=-1){
-                $("#a10").css('color','#ff6347');
-            }
-            
+			$(".genAns").each(function(i) {
+				if(wrong.indexOf(i) > -1) {
+					$(this).css('color','#ff6347');
+				}
+			});
         });
         
     });
