@@ -5,6 +5,7 @@ body{
 		/* PAGES */
         .front{
             margin:2%;
+			margin-top:7%;
             outline:4px solid #B68A7E;
             padding:5%;
             /*height:335px;*/
@@ -16,12 +17,11 @@ body{
         }
 		.quiz{
             margin:2%;
-            margin-top:5%;
+            margin-top:7%;
             padding:5%;
             align-self: center;
-            background-color: #FFF1DF;
+            background-color: white;
             display:none;
-            color:#40c2f2;
             border:5px solid #B68A7E;
             font-family: 'PT Sans', sans-serif;
         }
@@ -48,110 +48,93 @@ body{
             font-size:20px;
         }
 		/* PAGES END */
-		
-        input[type="radio"] {
-          border: 0;
-          clip: rect(0 0 0 0);
-          height: 1px;
-          margin: -1px;
-          overflow: hidden;
-          padding: 0;
-          position: absolute;
-          width: 1px;
-        }
-        .radio{
-             
-             
-             padding-bottom:4%;
-             
-        }
-        .radio label:before {
-          content: "";
-          display: inline-block;
-          width: 15px;
-          height:15px;
-          margin-right: 0.5em;
-          vertical-align: -3px;
-          border: 2px solid #666666;
-          padding: 0.13em;
-          background-color: transparent;
-          background-clip: content-box;
-
-        }
-        .radio label {
-          margin-right: 1em;
-        }
-        .radio input:hover + label:before {
-          border-color: #71d1f4;
-        }
-        .radio input:checked + label:before {
-          background-color: #71d1f4;
-          border-color: #71d1f4;
-        }
-        .arrow{
-            width: 0;
-            height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-top: 24px solid white;
-            position: relative;
-            left:30px;
-        }
-		#title {
+        
+        
+		#title{
 			font-size:100px;
 			font-weight:normal;
 		}
-		#start {
+		#start{
             background-color: #FFF1DF;
             font-weight:bold;
-            padding:8px;
+            padding:50px;
             font-size:50px;
             width:500px;
             border-radius:5px;
 			border:4px solid #B68A7E;
         }
-		#start:hover {
+		#start:hover{
 			background-color: #B68A7E;
+			cursor: pointer;
 		}
 		#num{
-            background-color:white;
+            background-color:;
             font-size:40px;
-            border-radius:30px;
-            padding-left:2%;
-            color:#40c2f2;
-            width:45px;
+			text-align: center;
         }
         #q{
-            background-color: white;
+            background-color:;
             padding-top:10px;
             padding-left:10px; 
             padding-bottom:10px;
             font-size:60px;
             font-weight: bold;
             border-radius:5px;
-            
         }
+		.radio{
+             padding-bottom:4%;
+        }
+		
+		/* Hides default radio buttons */
+		.radio input {
+			position: absolute;
+			opacity: 0;
+		}
+		
+		/* Custom Unchecked Buttons */
+		.circ {
+			content:"a";
+			display:inline-block;
+			height:35px;
+			width:35px;
+			margin-right: 0.5em;
+			vertical-align: -2px;
+			background-color:transparent;
+			border: 2px solid black;
+			border-radius: 50%;
+			/*padding: 0.13em;
+			background-clip: content-box;*/
+		}
+		
+		/* Custon Checked Button */
+		.radio input:checked ~ .circ{
+			background-color:black;
+		}
+		
         #op1,#op2,#op3,#op4{
-            background-color: white;
+            background-color: #EFEFEF;
             margin-bottom:2.5%;
-            padding:5px;
+            padding:8px;
             padding-left: 4%;
-            border-radius:5px;
+            border-radius:25px;
             font-size:50px;
         }
         #op1:hover,#op2:hover,#op3:hover,#op4:hover{
-            background-color:#ffff99;
+            background-color: #C9C9C9;
+			cursor: pointer;
         }
         #sub{
-            background-color: white;
-            padding: 8px;
-            border-radius:5px;
-            border:none;
-            width:200px;
-            font-size:20px;
-            color: #40c2f2;
-			display: none;
+            background-color: #FFF1DF;
+            padding: 50px;
+            border-radius:30px;
+            border:4px solid #B68A7E;
+            width:500px;
+            font-size:50px;
         }
+		#sub:hover {
+			background-color: #B68A7E;
+			cursor:pointer;
+		}
         
         .score{
             font-size:21px;
@@ -172,13 +155,52 @@ body{
 		
 /* Useless Code
 
+input[type="radio"] {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+}
+.radio label:before {
+          content: "";
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin-right: 0.5em;
+          vertical-align: -3px;
+          border: 2px solid #666666;
+          padding: 0.13em;
+          background-color: transparent;
+          background-clip: content-box;
+}
+.radio input:hover + label:before {
+          background-color: black;
+}
+.radio input:checked + label:before {
+          background-color: black;
+}
+.radio label {
+    margin-right: 1em;
+}
+#arrow{
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 24px solid red;
+    position: relative;
+    left:69px;
+}
 .qa{
     color:#71d1f4;
 }
 #next{
         display:none;
 }
-
 #sub{
         display: none;
 }

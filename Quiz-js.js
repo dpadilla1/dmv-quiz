@@ -65,14 +65,28 @@
             $(".front").hide();
             $(".quiz").show();
 			$("#sub").fadeIn(600);
-            $("#num").text(i+1+"/"+quelst.length)
+            $("#num").text("Question #"+(i+1)+" out of "+quelst.length)
             $("#q").text(quelst[i].que);
-            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
-            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
-            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
-            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'>"+"<span class='circ' id='ch1'></span>"+quelst[i].ans[0]);
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'>"+"<span class='circ' id='ch2'></span>"+quelst[i].ans[1]);
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'>"+"<span class='circ' id='ch3'></span>"+quelst[i].ans[2]);
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'>"+"<span class='circ' id='ch4'></span>"+quelst[i].ans[3]);
             
         });
+		
+		/* BROKEN CODE
+		$(".opBut").click(function() {
+			
+			
+			if($("input[name='opt']:checked").val()==0){
+				$("#op1").css({'background-color':'red','color':'green'});
+			}
+			else{
+				$("#op2").css({'background-color':'#EFEFEF'});
+				$("#op3").css({'background-color':'#EFEFEF'});
+				$("#op4").css({'background-color':'#EFEFEF'});
+			}
+		}); */
 		
         $("#sub").click(function(){
             
@@ -99,16 +113,25 @@
 			
         });
 		
+		//Submit Button on pressing 'Enter' Key
+		$(document).keydown(function(e) {
+			if ($(".quiz").css('display') != 'none'){
+				if(e.which === 13) {
+					$("#sub").click();
+				}
+			}
+		});
+		
         function next(){
             if(i!=(quelst.length)-1){
                     i++;
                 }
             $("#q").text(quelst[i].que);
-            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
-            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
-            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
-            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
-            $("#num").text(i+1+"/"+quelst.length);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'>"+"<span class='circ' id='ch1'></span>"+quelst[i].ans[0]);
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'>"+"<span class='circ' id='ch2'></span>"+quelst[i].ans[1]);
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'>"+"<span class='circ' id='ch3'></span>"+quelst[i].ans[2]);
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'>"+"<span class='circ' id='ch4'></span>"+quelst[i].ans[3]);
+            $("#num").text("Question #"+(i+1)+" out of "+quelst.length);
             $("#sub").show();
             }
         function reslt(){
