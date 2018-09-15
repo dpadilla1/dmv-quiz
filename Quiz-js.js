@@ -63,8 +63,8 @@
 		
         $("#start").click(function(){
             $(".front").hide();
-            $("#sub").show();
             $(".quiz").show();
+			$("#sub").fadeIn(600);
             $("#num").text(i+1+"/"+quelst.length)
             $("#q").text(quelst[i].que);
             $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
@@ -73,8 +73,8 @@
             $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
             
         });
+		
         $("#sub").click(function(){
-            
             
             if($("input[name='opt']:checked").val()!=null){
                 if($("input[name='opt']:checked").val()==quelst[i].right){
@@ -86,7 +86,7 @@
                 $("#sub").hide();
                 $(".score").text(score);
                 if(i!=quelst.length-1){
-                next();
+					next();
                 }
                 else{
                     reslt();
@@ -96,7 +96,9 @@
             else{
                 $(".p").text("Select One option");
             }
+			
         });
+		
         function next(){
             if(i!=(quelst.length)-1){
                     i++;
@@ -123,6 +125,7 @@
                 $(".message").text("Great!!You have really good knowledge of HTML and CSS.");
             }
         }
+		
         $("#an").click(function(){
             $(".result").hide();
             $(".answers").show();
