@@ -1,36 +1,70 @@
  $(document).ready(function(){
-        var que;
-        var ans;
-        var right;
-        var i=0;
-        var score=0;
-        var que1={que:"Which tag is used to create clickable link?",
-            ans:["&lt;hyperlink&gt;","&lt;a&gt;","&lt;link&gt;","&lt;source&gt;"],
-            right:"1"};
-        var que2={que:"Which tag is used to specify a list of prefined options for input controls?",
-            ans:["&lt;embed&gt;","&lt;source&gt;","&lt;li&gt;","&lt;datalist&gt;"],
-            right:"3"};
-        var que3={que:" Which HTML element is used to display a scalar measurement within a range?",
-            ans:["&lt;meter&gt;","&lt;range&gt;","&lt;scalar&gt;","&lt;progress&gt;"],    right:"0"};
-        var que4={que:"Choose the correct HTML element to define important text?",
-            ans:["&lt;important&gt;","&lt;strong&gt;","&lt;imp&gt;","&lt;b&gt;"],
-            right:"1"};
-        var que5={que:"______ element in HTML5 is used to indicate that text has been added to the document.?",
-            ans:["&lt;fill&gt;","&lt;insert&gt;","&lt;add&gt;","&lt;ins&gt;"],
-            right:"3"};
-        var que6={que:"______ attribute used in <table> element sets the width, in pixels, between the edge of a cell and its content",
-            ans:["cellpadding"," cellspacing","colspacing","edgespacing"],
+        
+        var que1={que:"WHAT IS THE BASIC SPEED LAW?",
+            ans:["Never drive faster than is safe for current conditions","Never drive faster than the posted speed limits",
+			"Keep up with the flow of traffic","All of the above"],
             right:"0"};
-        var que7={que:"Which attribute specifies the stack order of an element?",ans:["x-index","y-index","z-index","xy-index"],right:"2"};
-        var que8={que:"Which property controls scrolling of an image in background? ",ans:["background-fixed","background-scroll","background-scrolling","background-attachment"],right:"3"};
-        var que9={que:"What is default value of position property?",ans:["static","fixed","relative","absolute"],right:"0"};
-        var que10={que:"Which CSS has highest priority?",ans:["inline","internal","external","Each have equal priority"],right:"0"};
-        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var que2={que:"TO MAKE A RIGHT TURN ONTO A TWO-WAY STREET FROM A TWO-WAY STREET, START IN THE RIGHT-HAND LANE AND END IN:",
+            ans:["The left lane","The lane further away from the curb","The lane closest to the curb","Any lane that is available"],
+            right:"2"};
+        var que3={que:"WHY SHOULD DRIVERS AND PASSENGERS ADJUST SEAT HEADRESTS IN MOTOR VEHICLES?",
+            ans:["It helps people relax, relieving the stress of driving","It helps avoid and reduce the severity of neck injuries",
+			"It lets people maintain their hair styles lol","Tired people can prop up their heads, helping them stay alert"],
+			right:"1"};
+        var que4={que:"YOU HAVE CONSENTED TO TAKE A TEST FOR THE ALCOHOL CONTENT OF YOUR BLOOD, BREATH, OR URINE:",
+            ans:["Only if you have been drinking alcohol","Only if you are under 18 years of age",
+			"Whenever you drive in California","Only if an accident has occurred"],
+            right:"2"};
+        var que5={que:"WHICH OF THESE IS NOT A SAFE DRIVING PRACTICE?",
+            ans:["Maintaining a three-second following distance","Staring at the road ahead of your vehicle",
+			"Keeping your low beam lights on during bad weather","Keeping a space-cushion around the vehicle"],
+            right:"1"};
+        var que6={que:"ON LONG TRIPS, YOU CAN PREVENT DROWSINESS BY:",
+            ans:["Turning on your car radio","Slowing down so you can react better",
+			"Stopping at regular intervals for a rest","Moving your eyes from side to side as you drive"],
+            right:"2"};
+        var que7={que:"SOLID YELLOW LINES SEPARATE:",
+			ans:["The center lane from other traffic","Bicycle lanes from regular traffic",
+			"Traffic lanes on one-way streets","Vehicles going in opposite directions"],
+			right:"3"};
+        var que8={que:"WHEN MAKING A RIGHT TURN ON A GREEN LIGHT, YOU MUST:",
+			ans:["Maintain normal driving speed","Stop and look for oncoming traffic",
+			"Yield to pedestrians","Increase your normal driving speed"],
+			right:"2"};
+        var que9={que:"WHEN SHOULD YOU USE YOUR HEADLIGHTS?",
+			ans:["When you are having difficulty seeing cars around you","When you cannot see a car one mile ahead",
+			"One hour after sunset","All of the above"],
+			right:"0"};
+        var que10={que:"IF YOU EXIT A FREEWAY WITH A RAMP THAT CURVES DOWNHILL, YOU SHOULD:",
+			ans:["Slow to the posted speed limit for the freeway","Wait until you enter the curve before braking",
+			"Slow to a safe speed before the curve","Accelerate before the curve to prevent oversteer"],
+			right:"2"};
+		var que11={que:"WHO HAS THE RIGHT-OF-WAY AT AN INTERSECTION WITH NO CROSSWALKS?",
+			ans:["Pedestrians, but only with the green walk signal", "Vehicles, but they should slow down and be careful",
+			"Pedestrians always have the right-of-way", "Motorcyclists always have the right-of-way"],
+			right:"2"};
+		var que12={que:"IF YOU ARE STOPPED, INTENDING TO TURN LEFT, BUT ONCOMING VEHICLES ARE APPROACHING, YOU SHOULD:",
+			ans:["Turn immediately if there are no pedestrians nearby", "Give the oncoming vehicles the right-of-way",
+			"Turn because you have the right-of-way", "Keep driving, until you can find a safer place to make a turn"],
+			right:"1"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11,que12];
+		
+		//creates answer sheet
+		for (i = 0; i < 12; i++) {
+			$(".answers").append('<p class="qa">' + String(i+1) + '. ' + quelst[i].que + '</p>');
+			$(".answers").append('<p>Ans: <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
+		}
+		
+		
+		var i=0;
+        var score=0;
         var wrong=[];
+		
+		
         $("#start").click(function(){
             $(".front").hide();
-            $("#sub").show();
             $(".quiz").show();
+			$("#sub").fadeIn(600);
             $("#num").text(i+1+"/"+quelst.length)
             $("#q").text(quelst[i].que);
             $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
@@ -39,8 +73,8 @@
             $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
             
         });
+		
         $("#sub").click(function(){
-            
             
             if($("input[name='opt']:checked").val()!=null){
                 if($("input[name='opt']:checked").val()==quelst[i].right){
@@ -52,7 +86,7 @@
                 $("#sub").hide();
                 $(".score").text(score);
                 if(i!=quelst.length-1){
-                next();
+					next();
                 }
                 else{
                     reslt();
@@ -62,7 +96,9 @@
             else{
                 $(".p").text("Select One option");
             }
+			
         });
+		
         function next(){
             if(i!=(quelst.length)-1){
                     i++;
@@ -89,40 +125,15 @@
                 $(".message").text("Great!!You have really good knowledge of HTML and CSS.");
             }
         }
+		
         $("#an").click(function(){
             $(".result").hide();
             $(".answers").show();
-            if((wrong.toString()).search("0")!=-1){
-                $("#a1").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("1")!=-1){
-                $("#a2").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("2")!=-1){
-                $("#a3").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("3")!=-1){
-                $("#a4").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("4")!=-1){
-                $("#a5").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("5")!=-1){
-                $("#a6").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("6")!=-1){
-                $("#a7").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("7")!=-1){
-                $("#a8").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("8")!=-1){
-                $("#a9").css('color','#ff6347');
-            }
-            if((wrong.toString()).search("9")!=-1){
-                $("#a10").css('color','#ff6347');
-            }
-            
+			$(".genAns").each(function(i) {
+				if(wrong.indexOf(i) > -1) {
+					$(this).css('color','#ff6347');
+				}
+			});
         });
         
     });
