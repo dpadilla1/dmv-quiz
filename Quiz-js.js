@@ -51,8 +51,8 @@
 		
 		//creates answer sheet
 		for (i = 0; i < 12; i++) {
-			$(".answers").append('<p class="qa">' + String(i+1) + '. ' + quelst[i].que + '</p>');
-			$(".answers").append('<p>Ans: <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
+			$(".answers").append('<p class="qa"><b>' + String(i+1) + '.</b> ' + quelst[i].que + '</p>');
+			$(".answers").append('<p><b>Ans:</b> <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
 		}
 		
 		
@@ -148,6 +148,10 @@
 					$(this).css('color','#ff6347');
 				}
 			});
+        });
+		
+		$("#tryAgain").click(function(){
+            window.location.reload(true);
         });
         
     });

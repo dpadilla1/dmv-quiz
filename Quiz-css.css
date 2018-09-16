@@ -1,9 +1,8 @@
-body{
-        background-color:#FFF1DF;
-		/*background-color:red;*/
+body {
+    background-color:#FFF1DF;
 }
 		/* PAGES */
-        .front{
+        .front {
             margin:2%;
 			margin-top:7%;
             border:5px solid #B68A7E;
@@ -13,9 +12,9 @@ body{
             text-align: center;
             background-color: white;
             color:black;
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Julius Sans One', sans-serif;
         }
-		.quiz{
+		.quiz {
             margin:2%;
             margin-top:7%;
             padding:5%;
@@ -26,7 +25,7 @@ body{
 			border-radius:10px;
             font-family: 'PT Sans', sans-serif;
         }
-        .result{
+        .result {
             margin:2%;
 			margin-top:7%;
             padding:5%;
@@ -39,7 +38,7 @@ body{
 			border-radius:10px;
             font-family: 'PT Sans', sans-serif;
         }
-		.answers{
+		.answers {
             margin:2%;
             margin-top:4%;
             padding:5%;
@@ -55,11 +54,11 @@ body{
 		/* PAGES END */
         
         
-		#title{
+		#title {
 			font-size:100px;
 			font-weight:normal;
 		}
-		#start{
+		#start {
             background-color: #FFF1DF;
             font-weight:bold;
             padding:50px;
@@ -68,23 +67,24 @@ body{
             border-radius:5px;
 			border:4px solid #B68A7E;
         }
-		#start:hover{
+		#start:hover {
 			background-color: #B68A7E;
 			cursor: pointer;
 		}
-		#num{
+		#num {
             font-size:40px;
 			text-align: center;
         }
-        #q{
+        #q {
+			margin-bottom:40px;
             padding-top:10px;
             padding-left:10px; 
             padding-bottom:10px;
-            font-size:55px;
+            font-size:50px;
             font-weight: bold;
             border-radius:5px;
         }
-		.radio{
+		.radio {
              padding-bottom:2%;
         }
 		
@@ -110,31 +110,31 @@ body{
 		}
 		
 		/* Custon Checked Button */
-		.radio input:checked ~ .circ{
+		.radio input:checked ~ .circ {
 			background-color:black;
 		}
 		
-        #op1,#op2,#op3,#op4{
+        #op1,#op2,#op3,#op4 {
             background-color: #EFEFEF;
             margin-bottom:2.5%;
             padding:8px;
             padding-left: 4%;
             border-radius:25px;
-            font-size:50px;
+            font-size:45px;
         }
-        #op1:hover,#op2:hover,#op3:hover,#op4:hover{
+        #op1:hover,#op2:hover,#op3:hover,#op4:hover {
             background-color: #C9C9C9;
 			cursor: pointer;
         }
 		
-		#empty{
+		#empty {
 			color:red;
 			font-size:40px;
 			font-weight:bold;
 			text-align:center;
 			display:none;
 		}
-        #sub{
+        #sub {
             background-color: #FFF1DF;
             padding: 50px;
             border-radius:30px;
@@ -146,16 +146,16 @@ body{
 			background-color: #B68A7E;
 			cursor:pointer;
 		}
-        #score{
+        #score {
             font-size:60px;
             font-weight: bold;
             color: black;
         }
-        #message{
+        #message {
             font-size: 50px;
             color: black;
         }
-		#viewAns{
+		#viewAns {
 			top:10px;
 			background-color: #FFF1DF;
             padding: 50px;
@@ -168,9 +168,25 @@ body{
 			background-color: #B68A7E;
 			cursor:pointer;
 		}
-		.genAns{
+		.genAns {
 			color:#80ff00;
 			font-weight: bold;
+		}
+		#tryAgain {
+			position:fixed;
+			height:10%;
+			width:100%;
+			bottom:0;
+			left:0;
+			background-color:#FFF1DF;
+			color:black;
+			font-size:40px;
+			font-weight:bold;
+			border: 4px solid black;
+		}
+		#tryAgain:hover {
+			background-color: #B68A7E;
+			cursor:pointer;
 		}
 		
 /* Useless Code
