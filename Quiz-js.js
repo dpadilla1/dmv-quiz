@@ -74,19 +74,10 @@
             
         });
 		
-		/* BROKEN CODE
+	
 		$(".opBut").click(function() {
-			
-			
-			if($("input[name='opt']:checked").val()==0){
-				$("#op1").css({'background-color':'red','color':'green'});
-			}
-			else{
-				$("#op2").css({'background-color':'#EFEFEF'});
-				$("#op3").css({'background-color':'#EFEFEF'});
-				$("#op4").css({'background-color':'#EFEFEF'});
-			}
-		}); */
+			$("#empty").hide();
+		});
 		
         $("#sub").click(function(){
             
@@ -108,7 +99,7 @@
 
             }
             else{
-                $(".p").text("Select One option");
+                $("#empty").show();
             }
 			
         });
@@ -137,19 +128,19 @@
         function reslt(){
             $(".quiz").hide();
             $(".result").show();
-            $(".score").text(score+"/"+quelst.length);
+            $("#score").text("You scored a "+score+" / "+quelst.length);
             if(score<=4){
-                $(".message").text("Oh no!!You need to do better.");
+                $("#message").text("You need to study more.");
             }
             else if(score<8){
-                $(".message").text("Good.Dont stop studying.");
+                $("#message").text("Decent, but there's more work to do.");
             }
             else{
-                $(".message").text("Great!!You have really good knowledge of HTML and CSS.");
+                $("#message").text("Excellent!");
             }
         }
 		
-        $("#an").click(function(){
+        $("#viewAns").click(function(){
             $(".result").hide();
             $(".answers").show();
 			$(".genAns").each(function(i) {

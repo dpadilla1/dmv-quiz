@@ -6,9 +6,9 @@ body{
         .front{
             margin:2%;
 			margin-top:7%;
-            outline:4px solid #B68A7E;
+            border:5px solid #B68A7E;
+			border-radius:10px;
             padding:5%;
-            /*height:335px;*/
             padding-top:10%;
             text-align: center;
             background-color: white;
@@ -23,29 +23,34 @@ body{
             background-color: white;
             display:none;
             border:5px solid #B68A7E;
+			border-radius:10px;
             font-family: 'PT Sans', sans-serif;
         }
         .result{
             margin:2%;
+			margin-top:7%;
             padding:5%;
-            padding-top:40%;
-            height:330px;
+            padding-top:10%;
+            height:350px;
             text-align: center;
             background-color: white;
             display: none;
+			border:5px solid #B68A7E;
+			border-radius:10px;
             font-family: 'PT Sans', sans-serif;
         }
 		.answers{
             margin:2%;
-            margin-top:5%;
+            margin-top:4%;
             padding:5%;
+			padding-top:2%;
             align-self: center;
             background-color: white;
             display:none;
-            color:#71d1f4;
-            border:5px solid white;
+            border:5px solid #B68A7E;
+			border-radius:10px;
             font-family: 'PT Sans', sans-serif;
-            font-size:20px;
+            font-size:40px;
         }
 		/* PAGES END */
         
@@ -68,21 +73,19 @@ body{
 			cursor: pointer;
 		}
 		#num{
-            background-color:;
             font-size:40px;
 			text-align: center;
         }
         #q{
-            background-color:;
             padding-top:10px;
             padding-left:10px; 
             padding-bottom:10px;
-            font-size:60px;
+            font-size:55px;
             font-weight: bold;
             border-radius:5px;
         }
 		.radio{
-             padding-bottom:4%;
+             padding-bottom:2%;
         }
 		
 		/* Hides default radio buttons */
@@ -93,7 +96,7 @@ body{
 		
 		/* Custom Unchecked Buttons */
 		.circ {
-			content:"a";
+			content:"";
 			display:inline-block;
 			height:35px;
 			width:35px;
@@ -123,6 +126,14 @@ body{
             background-color: #C9C9C9;
 			cursor: pointer;
         }
+		
+		#empty{
+			color:red;
+			font-size:40px;
+			font-weight:bold;
+			text-align:center;
+			display:none;
+		}
         #sub{
             background-color: #FFF1DF;
             padding: 50px;
@@ -135,19 +146,28 @@ body{
 			background-color: #B68A7E;
 			cursor:pointer;
 		}
-        
-        .score{
-            font-size:21px;
-            font-weight: bolder;
-            color: #40c2f2;
+        #score{
+            font-size:60px;
+            font-weight: bold;
+            color: black;
         }
-        .message{
-            font-size: 20px;
-            color: #40c2f2;
+        #message{
+            font-size: 50px;
+            color: black;
         }
-        .answers{
-            display: none;
-        }
+		#viewAns{
+			top:10px;
+			background-color: #FFF1DF;
+            padding: 50px;
+            border-radius:30px;
+            border:4px solid #B68A7E;
+            width:700px;
+            font-size:50px;
+		}
+		#viewAns:hover {
+			background-color: #B68A7E;
+			cursor:pointer;
+		}
 		.genAns{
 			color:#80ff00;
 			font-weight: bold;
@@ -202,6 +222,9 @@ input[type="radio"] {
         display:none;
 }
 #sub{
+        display: none;
+}
+.answers{
         display: none;
 }
 */
