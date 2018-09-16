@@ -47,12 +47,20 @@
 			ans:["Turn immediately if there are no pedestrians nearby", "Give the oncoming vehicles the right-of-way",
 			"Turn because you have the right-of-way", "Keep driving, until you can find a safer place to make a turn"],
 			right:"1"};
-        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11,que12];
+		var que13={que:"WHO MUST YIELD WHEN A DRIVER IS TURNING RIGHT AND A PEDESTRIAN IS CROSSING WITHOUT A TRAFFIC LIGHT?",
+			ans:["Whoever started first", "The driver",
+			"Whoever is slower", "The pedestrian"],
+			right:"1"};
+		var que14={que:"YOU MUST YIELD THE RIGHT-OF-WAY AT AN INTERSECTION TO:",
+			ans:["The car in the intersection", "The car on your right",
+			"The car in the opposite lane of traffic", "The car on your left"],
+			right:"0"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11,que12,que13,que14];
 		
 		//creates answer sheet
-		for (i = 0; i < 12; i++) {
-			$(".answers").append('<p class="qa"><b>' + String(i+1) + '.</b> ' + quelst[i].que + '</p>');
-			$(".answers").append('<p><b>Ans:</b> <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
+		for (i = 0; i < 14; i++) {
+			$(".answers").append('<p><b>' + String(i+1) + '.</b> ' + quelst[i].que + '</p>');
+			$(".answers").append('<p class="indent"><b>Ans:</b> <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
 		}
 		
 		

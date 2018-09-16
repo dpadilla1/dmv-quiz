@@ -188,6 +188,9 @@ body {
 			color:#077C00;
 			font-weight: bold;
 		}
+		.indent {
+			padding-left:2em;
+		}
 		#tryAgain {
 			position:fixed;
 			height:10%;
