@@ -74,9 +74,8 @@
             
         });
 		
-	
 		$(".opBut").click(function() {
-			$("#empty").hide();
+			/*$("#empty").hide();*/
 		});
 		
         $("#sub").click(function(){
@@ -89,6 +88,7 @@
                     wrong.push(i);
                 }   
                 $("#sub").hide();
+				$("#empty").hide();
                 $(".score").text(score);
                 if(i!=quelst.length-1){
 					next();
