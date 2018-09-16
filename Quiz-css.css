@@ -2,10 +2,22 @@ body {
     background-color:#FFF1DF;
 }
 
+.outer {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
 /* PAGES */
 .front {
-	margin:2%;
-	margin-top:15%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin:;
 	border:5px solid #B68A7E;
 	border-radius:10px;
 	padding:5%;
@@ -125,7 +137,8 @@ body {
 			cursor:pointer;
 		}
 .result {
-	margin:2%;
+	margin-left:2%;
+	margin-right:2%;
 	margin-top:15%;
 	padding:5%;
 	padding-bottom:250px;
@@ -163,7 +176,7 @@ body {
 		}
 .answers {
 	margin:2%;
-	margin-top:4%;
+	margin-top:2%;
 	padding:5%;
 	padding-top:2%;
 	padding-bottom:14%;

@@ -70,7 +70,7 @@ $(document).ready(function() {
 
 
 		$("#start").click(function() {
-			$(".front").hide();
+			$(".outer").hide();
 			$(".quiz").show();
 			$("#sub").fadeIn(600);
 			$("#num").text("Question #"+(i+1)+" out of "+quelst.length)
