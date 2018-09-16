@@ -18,7 +18,7 @@ body {
         }
 		.quiz {
             margin:2%;
-            margin-top:7%;
+            margin-top:5%;
             padding:5%;
             align-self: center;
             background-color: white;
@@ -31,6 +31,7 @@ body {
             margin:2%;
 			margin-top:7%;
             padding:5%;
+			padding-bottom:250px;
             padding-top:10%;
             height:350px;
             text-align: center;
@@ -87,10 +88,10 @@ body {
         }
         #q {
 			margin-bottom:40px;
-            padding-top:10px;
+            padding-top:0px;
             padding-left:10px; 
             padding-bottom:10px;
-            font-size:60px;
+            font-size:55px;
             font-weight: bold;
             border-radius:5px;
 			max-height: 999999px;
@@ -134,7 +135,7 @@ body {
 			padding-bottom: 18px;
             padding-left: 4%;
             border-radius:25px;
-            font-size:50px;
+            font-size:48px;
         }
         #op1:hover,#op2:hover,#op3:hover,#op4:hover {
             background-color: #C9C9C9;

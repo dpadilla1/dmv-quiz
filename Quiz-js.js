@@ -124,6 +124,7 @@
             $("#op4").html("<input type='radio' name='opt' id='o4' value='3'>"+"<span class='circ' id='ch4'></span>"+quelst[i].ans[3]);
             $("#num").text("Question #"+(i+1)+" out of "+quelst.length);
             $("#sub").show();
+			$("#sub").css('background-color','#FFF1DF');
             }
         function reslt(){
             $(".quiz").hide();
