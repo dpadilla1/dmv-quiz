@@ -10,32 +10,32 @@
 	<body>
 		<div class="outer">
 			<div class="middle">
-				<div class="front">
+				<div class="pages" id="front-page">
 					<h1 id="title">CA DMV PERMIT<br>PRACTICE QUIZ</h1>
 					<!-- <h2>Good Luck Candy :)</h2> -->
-					<button type="button" id="start">Start</button>    
+					<button type="button" id="start-button">Start</button>    
 				</div>
 			</div>
 		</div>
-		<div class="quiz">
-			<p id="num"></p>
+		<div class="pages" id="quiz-page">
+			<p id="ques-num"></p>
 			<div id="q"></div>
 			<div class="radio">
-				<label><div class="opBut" id="op1"></div></label>
-				<label><div class="opBut" id="op2"></div></label>
-				<label><div class="opBut" id="op3"></div></label>
-				<label><div class="opBut" id="op4"></div></label><br>
-				<p id="empty">Please select one option to continue.</span>
+				<label><div id="op1"></div></label>
+				<label><div id="op2"></div></label>
+				<label><div id="op3"></div></label>
+				<label><div id="op4"></div></label><br>
+				<p id="empty-msg">Please select one option to continue.</span>
 			</div><br>
-			<button type="button" id="sub">Submit</button>
+			<button type="button" id="submit-button">Submit</button>
 		</div>
-		<div class="result">
+		<div class="pages" id="result-page">
 			<div id="score"></div><br>
-			<div id="message"></div><br>
-			<button type="button" id="viewAns">Click here to see Answers</button>
+			<div id="eval-msg"></div><br>
+			<button type="button" id="view-ans-button">Click here to see Answers</button>
 		</div>
-		<div class="answers">
-			<button type="button" id="tryAgain">Click here to Try Again</button>
+		<div class="pages" id="answers-page">
+			<button type="button" id="try-again-button">Click here to Try Again</button>
 		</div>
 	</body>
 </html>

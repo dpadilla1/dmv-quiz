@@ -2,6 +2,7 @@ body {
 	background-color:#FFF1DF;
 }
 
+/* Used to Vertically Align Front Page */
 .outer {
 	display: table;
 	position: absolute;
@@ -12,19 +13,38 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 }
+/* Vertical Align End*/
 
-/* PAGES */
-.front {
+/* General Class Style */
+.pages {
 	margin-left: 2%;
 	margin-right: 2%;
-	border:5px solid #B68A7E;
-	border-radius:10px;
-	padding:5%;
+	padding: 5%;
+	background-color: white;
+	border: 5px solid #B68A7E;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 10px 10px 10px -2px gray;
+	-webkit-box-shadow: 10px 10px 10px -2px gray;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 50px;
+}
+button {
+	background-color: #FFF1DF;
+	border:4px solid #B68A7E;
+}
+button:hover {
+	background-color: #B68A7E;
+	cursor:pointer;
+}
+/* Genereal Class Style End */
+
+/* Unique to Pages */
+#front-page {
 	padding-top:10%;
 	text-align: center;
 	background-image: url('http://i68.tinypic.com/o0rsic.jpg');
 	background-size: cover;
-	background-color: white;
 	color:white;
 	font-family: 'Julius Sans One', sans-serif;
 }
@@ -33,34 +53,29 @@ body {
 			font-weight:normal;
 			padding-top:200px;
 		}
-		#start {
+		#start-button {
 			background-color: rgb(253, 233, 206);
+			font-size:50px;
 			font-weight:bold;
 			padding:50px;
 			margin-bottom:300px;
-			font-size:50px;
 			width:500px;
-			border-radius:5px;
+			border-radius:20px;
+			-webkit-border-radius:20px;
 			border:4px solid rgb(253, 233, 206);
 		}
-		#start:hover {
+		#start-button:hover {
 			background-color: #9A6F53;
 			border-color: #9A6F53;
 			cursor: pointer;
 		}
-.quiz {
-	margin:2%;
+#quiz-page {
+	margin-bottom:2%;
 	margin-top:5%;
-	padding:5%;
 	align-self: center;
-	background-color: white;
 	display:none;
-	border:5px solid #B68A7E;
-	border-radius:10px;
-	font-family: 'PT Sans', sans-serif;
 }
-		#num {
-			font-size:50px;
+		#ques-num {
 			text-align: center;
 			max-height: 999999px;
 			-webkit-text-size-adjust: none;
@@ -110,108 +125,86 @@ body {
 			padding-bottom: 18px;
 			padding-left: 4%;
 			border-radius:25px;
+			-webkit-border-radius:25px;
+			box-shadow:7px 7px 11px 0px gray;
+			-webkit-box-shadow:7px 7px 11px 0px gray;
 			font-size:48px;
 		}
 		#op1:hover,#op2:hover,#op3:hover,#op4:hover {
 			background-color: #C9C9C9;
 			cursor: pointer;
 		}
-		#empty {
+		#empty-msg {
 			color:red;
 			font-size:40px;
 			font-weight:bold;
 			text-align:center;
 			display:none;
+			max-height: 999999px;
+			-webkit-text-size-adjust: none;
 		}
-		#sub {
-			background-color: #FFF1DF;
+		#submit-button {
 			padding: 50px;
 			border-radius:30px;
-			border:4px solid #B68A7E;
 			width:500px;
 			font-size:50px;
 			display:block;
 			margin: 0 auto;
+			box-shadow:7px 7px 11px 0px gray;
+			-webkit-box-shadow:7px 7px 11px 0px gray;
 		}
-		#sub:hover {
-			background-color: #B68A7E;
-			cursor:pointer;
-		}
-.result {
-	margin-left:2%;
-	margin-right:2%;
+#result-page {
 	margin-top:15%;
-	padding:5%;
 	padding-bottom:250px;
 	padding-top:10%;
 	height:350px;
 	text-align: center;
-	background-color: white;
 	display: none;
-	border:5px solid #B68A7E;
-	border-radius:10px;
-	font-family: 'PT Sans', sans-serif;
 }
 		#score {
 			font-size:60px;
 			font-weight: bold;
 			color: black;
 		}
-		#message {
-			font-size: 50px;
+		#eval-msg {
 			color: black;
 			margin-bottom: 20px;
 		}
-		#viewAns {
+		#view-ans-button {
 			top:10px;
-			background-color: #FFF1DF;
 			padding: 50px;
 			border-radius:30px;
-			border:4px solid #B68A7E;
 			width:700px;
 			font-size:50px;
+			box-shadow:7px 7px 11px 0px gray;
+			-webkit-box-shadow:7px 7px 11px 0px gray;
 		}
-		#viewAns:hover {
-			background-color: #B68A7E;
-			cursor:pointer;
-		}
-.answers {
-	margin:2%;
+#answers-page {
+	margin-bottom:2%;
 	margin-top:2%;
-	padding:5%;
 	padding-top:2%;
 	padding-bottom:14%;
 	align-self: center;
-	background-color: white;
 	display:none;
-	border:5px solid #B68A7E;
-	border-radius:10px;
-	font-family: 'PT Sans', sans-serif;
-	font-size:50px;
 	max-height: 999999px;
 	-webkit-text-size-adjust: none;
+	font-weight: bold;
 }
 		.genAns {
 			color:#077C00;
-			font-weight: bold;
 		}
 		.indent {
 			padding-left:2em;
 		}
-		#tryAgain {
+		#try-again-button {
 			position:fixed;
 			height:10%;
 			width:100%;
 			bottom:0;
 			left:0;
-			background-color:#FFF1DF;
 			color:black;
 			font-size:40px;
 			font-weight:bold;
-			border: 4px solid #B68A7E;
-		}
-		#tryAgain:hover {
-			background-color: #B68A7E;
-			cursor:pointer;
+			border: 1px solid #B68A7E;
 		}
 /* PAGES END */

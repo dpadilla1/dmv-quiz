@@ -65,8 +65,8 @@ $(document).ready(function() {
 
 		//creates answer sheet
 		for (i = 0; i < quelst.length; i++) {
-			$(".answers").append('<p><b>' + String(i+1) + '.</b> ' + quelst[i].que + '</p>');
-			$(".answers").append('<p class="indent"><b>Answer:</b> <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
+			$("#answers-page").append('<p>' + String(i+1) + '. ' + quelst[i].que + '</p>');
+			$("#answers-page").append('<p class="indent">Answer: <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
 		}
 
 
@@ -75,11 +75,11 @@ $(document).ready(function() {
 		var wrong=[];
 
 
-		$("#start").click(function() {
+		$("#start-button").click(function() {
 			$(".outer").hide();
-			$(".quiz").show();
-			$("#sub").fadeIn(600);
-			$("#num").text("Question #"+(i+1)+" out of "+quelst.length)
+			$("#quiz-page").show();
+			$("#submit-button").fadeIn(600);
+			$("#ques-num").text("Question #"+(i+1)+" out of "+quelst.length)
 			$("#q").text(quelst[i].que);
 			$("#op1").html("<input type='radio' name='opt' id='o1' value='0'>"+"<span class='circ' id='ch1'></span>"+quelst[i].ans[0]);
 			$("#op2").html("<input type='radio' name='opt' id='o2' value='1'>"+"<span class='circ' id='ch2'></span>"+quelst[i].ans[1]);
@@ -87,7 +87,7 @@ $(document).ready(function() {
 			$("#op4").html("<input type='radio' name='opt' id='o4' value='3'>"+"<span class='circ' id='ch4'></span>"+quelst[i].ans[3]);
         });
 		
-		$("#sub").click(function() {
+		$("#submit-button").click(function() {
 			if($("input[name='opt']:checked").val()!=null) {
 				if($("input[name='opt']:checked").val()==quelst[i].right) {
 					score++;
@@ -95,8 +95,8 @@ $(document).ready(function() {
 				else {
 					wrong.push(i);
 				}   
-				$("#sub").hide();
-				$("#empty").hide();
+				$("#submit-button").hide();
+				$("#empty-msg").hide();
 				$(".score").text(score);
 				if(i!=quelst.length-1) {
 					next();
@@ -106,15 +106,15 @@ $(document).ready(function() {
 				}
 			}
 			else{
-				$("#empty").show();
+				$("#empty-msg").show();
 			}
 		});
 
 		//Activates Submit Button on pressing 'Enter' Key
 		$(document).keydown(function(e) {
-			if ($(".quiz").css('display') != 'none'){
+			if ($("#quiz-page").css('display') != 'none'){
 				if(e.which === 13) {
-					$("#sub").click();
+					$("#submit-button").click();
 				}
 			}
 		});
@@ -123,34 +123,34 @@ $(document).ready(function() {
 			if(i!=(quelst.length)-1) {
 				i++;
 			}
+			$("#ques-num").text("Question #"+(i+1)+" out of "+quelst.length);
 			$("#q").text(quelst[i].que);
 			$("#op1").html("<input type='radio' name='opt' id='o1' value='0'>"+"<span class='circ' id='ch1'></span>"+quelst[i].ans[0]);
 			$("#op2").html("<input type='radio' name='opt' id='o2' value='1'>"+"<span class='circ' id='ch2'></span>"+quelst[i].ans[1]);
 			$("#op3").html("<input type='radio' name='opt' id='o3' value='2'>"+"<span class='circ' id='ch3'></span>"+quelst[i].ans[2]);
 			$("#op4").html("<input type='radio' name='opt' id='o4' value='3'>"+"<span class='circ' id='ch4'></span>"+quelst[i].ans[3]);
-			$("#num").text("Question #"+(i+1)+" out of "+quelst.length);
-			$("#sub").show();
-			$("#sub").blur();
+			$("#submit-button").show();
+			$("#submit-button").blur();
 		}
 
 		function reslt() {
-			$(".quiz").hide();
-			$(".result").show();
+			$("#quiz-page").hide();
+			$("#result-page").show();
 			$("#score").text("You scored a "+score+" / "+quelst.length);
 			if(score<=4) {
-				$("#message").text("You need to study more.");
+				$("#eval-msg").text("You need to study more.");
 			}
 			else if(score<8) {
-				$("#message").text("Decent, but there's more work to do.");
+				$("#eval-msg").text("Decent, but there's more work to do.");
 			}
 			else {
-				$("#message").text("Excellent!");
+				$("#eval-msg").text("Excellent!");
 			}
 		}
 
-		$("#viewAns").click(function() {
-			$(".result").hide();
-			$(".answers").show();
+		$("#view-ans-button").click(function() {
+			$("#result-page").hide();
+			$("#answers-page").show();
 			$(".genAns").each(function(i) {
 				if(wrong.indexOf(i) > -1) {
 					$(this).css('color','#ff6347');
@@ -158,7 +158,7 @@ $(document).ready(function() {
 			});
 		});
 
-		$("#tryAgain").click(function() {
+		$("#try-again-button").click(function() {
 			window.location.reload(true);
 		});
         
