@@ -1,11 +1,22 @@
 body {
-    background-color:#FFF1DF;
+	background-color:#FFF1DF;
+}
+
+.outer {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.middle {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 /* PAGES */
 .front {
-	margin:2%;
-	margin-top:15%;
+	margin-left: 2%;
+	margin-right: 2%;
 	border:5px solid #B68A7E;
 	border-radius:10px;
 	padding:5%;
@@ -23,14 +34,14 @@ body {
 			padding-top:200px;
 		}
 		#start {
-			background-color: #B68A7E;
+			background-color: rgb(253, 233, 206);
 			font-weight:bold;
 			padding:50px;
 			margin-bottom:300px;
 			font-size:50px;
 			width:500px;
 			border-radius:5px;
-			border:4px solid #B68A7E;
+			border:4px solid rgb(253, 233, 206);
 		}
 		#start:hover {
 			background-color: #9A6F53;
@@ -119,13 +130,16 @@ body {
 			border:4px solid #B68A7E;
 			width:500px;
 			font-size:50px;
+			display:block;
+			margin: 0 auto;
 		}
 		#sub:hover {
 			background-color: #B68A7E;
 			cursor:pointer;
 		}
 .result {
-	margin:2%;
+	margin-left:2%;
+	margin-right:2%;
 	margin-top:15%;
 	padding:5%;
 	padding-bottom:250px;
@@ -163,7 +177,7 @@ body {
 		}
 .answers {
 	margin:2%;
-	margin-top:4%;
+	margin-top:2%;
 	padding:5%;
 	padding-top:2%;
 	padding-bottom:14%;

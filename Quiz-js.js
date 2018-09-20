@@ -57,10 +57,16 @@ $(document).ready(function() {
 			right:"0"};
 		var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11,que12,que13,que14];
 
+		//randomizes questions
+		for (let i = quelst.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[quelst[i], quelst[j]] = [quelst[j], quelst[i]];
+		}
+
 		//creates answer sheet
-		for (i = 0; i < 14; i++) {
+		for (i = 0; i < quelst.length; i++) {
 			$(".answers").append('<p><b>' + String(i+1) + '.</b> ' + quelst[i].que + '</p>');
-			$(".answers").append('<p class="indent"><b>Ans:</b> <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
+			$(".answers").append('<p class="indent"><b>Answer:</b> <span class="genAns">' + quelst[i].ans[Number(quelst[i].right)] + '</p>');
 		}
 
 
@@ -70,7 +76,7 @@ $(document).ready(function() {
 
 
 		$("#start").click(function() {
-			$(".front").hide();
+			$(".outer").hide();
 			$(".quiz").show();
 			$("#sub").fadeIn(600);
 			$("#num").text("Question #"+(i+1)+" out of "+quelst.length)
