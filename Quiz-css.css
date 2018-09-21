@@ -71,28 +71,33 @@ button:hover {
 		}
 #quiz-page {
 	margin-bottom:2%;
-	margin-top:5%;
+	margin-top:3%;
+	padding-top:2%;
 	align-self: center;
 	display:none;
 }
 		#ques-num {
+			margin-bottom:3%;
 			text-align: center;
 			max-height: 999999px;
 			-webkit-text-size-adjust: none;
 		}
 		#q {
-			margin-bottom:40px;
-			padding-top:0px;
+			margin-bottom:3%;
 			padding-left:10px; 
 			padding-bottom:10px;
+			height:290px;
 			font-size:55px;
 			font-weight: bold;
 			border-radius:5px;
 			max-height: 999999px;
 			-webkit-text-size-adjust: none;
+			align-items: center;
+			display:flex;
 		}
 		.radio {
-			padding-bottom:2%;
+			padding-bottom:3%;
+			height:800px;
 		}
 		/* Hides default radio buttons */
 		.radio input {
@@ -183,10 +188,9 @@ button:hover {
 			-webkit-box-shadow:7px 7px 11px 0px gray;
 		}
 #answers-page {
-	margin-bottom:2%;
+	margin-bottom:25%;
 	margin-top:2%;
 	padding-top:2%;
-	padding-bottom:14%;
 	align-self: center;
 	display:none;
 	max-height: 999999px;

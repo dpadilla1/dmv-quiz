@@ -148,7 +148,7 @@ $(document).ready(function() {
 					+"<span class='circ' id='ch4'></span><span class='fade'>"+quelst[i].ans[3]+"</span>");
 				n();
 			});
-			$("#ques-num, #q, .fade").animate({opacity:1},1);
+			$("#ques-num, #q, .fade").animate({opacity:1},700);
 			$("#op1, #op2, #op3, #op4").animate({marginRight:''});
 			$("#submit-button").show();
 			$("#submit-button").blur();
