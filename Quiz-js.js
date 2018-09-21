@@ -99,7 +99,7 @@ $(document).ready(function() {
 				else {
 					wrong.push(i);
 				}
-				$("#submit-button").fadeOut();
+				$("#submit-button").hide();
 				$("#empty-msg").hide();
 				if(i!=quelst.length-1) {
 					next();
@@ -148,9 +148,9 @@ $(document).ready(function() {
 					+"<span class='circ' id='ch4'></span><span class='fade'>"+quelst[i].ans[3]+"</span>");
 				n();
 			});
-			$("#ques-num, #q, .fade").animate({opacity:1});
+			$("#ques-num, #q, .fade").animate({opacity:1},1);
 			$("#op1, #op2, #op3, #op4").animate({marginRight:''});
-			$("#submit-button").fadeIn(500);
+			$("#submit-button").show();
 			$("#submit-button").blur();
 		}
 
