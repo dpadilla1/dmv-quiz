@@ -75,34 +75,37 @@ $(document).ready(function() {
 		var wrong=[];
 
 
-		$("#start-button").click(function() {
-			$(".outer").hide();
-			$("#quiz-page").show();
+		$("#start-button").on('click',function() {
+			$(".outer").fadeOut(500);
+			$("#quiz-page").delay(500).fadeIn(250);
 			$("#submit-button").fadeIn(600);
 			$("#ques-num").text("Question #"+(i+1)+" out of "+quelst.length)
 			$("#q").text(quelst[i].que);
-			$("#op1").html("<input type='radio' name='opt' id='o1' value='0'>"+"<span class='circ' id='ch1'></span>"+quelst[i].ans[0]);
-			$("#op2").html("<input type='radio' name='opt' id='o2' value='1'>"+"<span class='circ' id='ch2'></span>"+quelst[i].ans[1]);
-			$("#op3").html("<input type='radio' name='opt' id='o3' value='2'>"+"<span class='circ' id='ch3'></span>"+quelst[i].ans[2]);
-			$("#op4").html("<input type='radio' name='opt' id='o4' value='3'>"+"<span class='circ' id='ch4'></span>"+quelst[i].ans[3]);
+			$("#op1").html("<input type='radio' name='opt' id='o1' value='0'>"
+				+"<span class='circ' id='ch1'></span><span class='fade'>"+quelst[i].ans[0]+"</span>");
+			$("#op2").html("<input type='radio' name='opt' id='o2' value='1'>"
+				+"<span class='circ' id='ch2'></span><span class='fade'>"+quelst[i].ans[1]+"</span>");
+			$("#op3").html("<input type='radio' name='opt' id='o3' value='2'>"
+				+"<span class='circ' id='ch3'></span><span class='fade'>"+quelst[i].ans[2]+"</span>");
+			$("#op4").html("<input type='radio' name='opt' id='o4' value='3'>"
+				+"<span class='circ' id='ch4'></span><span class='fade'>"+quelst[i].ans[3]+"</span>");
         });
 		
-		$("#submit-button").click(function() {
+		$("#submit-button").on('click', function() {
 			if($("input[name='opt']:checked").val()!=null) {
 				if($("input[name='opt']:checked").val()==quelst[i].right) {
 					score++;
 				}
 				else {
 					wrong.push(i);
-				}   
-				$("#submit-button").hide();
+				}
+				$("#submit-button").fadeOut();
 				$("#empty-msg").hide();
-				$(".score").text(score);
 				if(i!=quelst.length-1) {
 					next();
 				}
 				else {
-					reslt();
+					showResult();
 				}
 			}
 			else{
@@ -112,10 +115,14 @@ $(document).ready(function() {
 
 		//Activates Submit Button on pressing 'Enter' Key
 		$(document).keydown(function(e) {
-			if ($("#quiz-page").css('display') != 'none'){
-				if(e.which === 13) {
+			if (e.which === 13) {
+				if ($("#quiz-page").css('display') != 'none') {
 					$("#submit-button").click();
 				}
+				else if ($(".outer").css('display') != 'none') {
+					$("#start-button").click();
+				}
+				else {}
 			}
 		});
 
@@ -123,19 +130,33 @@ $(document).ready(function() {
 			if(i!=(quelst.length)-1) {
 				i++;
 			}
-			$("#ques-num").text("Question #"+(i+1)+" out of "+quelst.length);
-			$("#q").text(quelst[i].que);
-			$("#op1").html("<input type='radio' name='opt' id='o1' value='0'>"+"<span class='circ' id='ch1'></span>"+quelst[i].ans[0]);
-			$("#op2").html("<input type='radio' name='opt' id='o2' value='1'>"+"<span class='circ' id='ch2'></span>"+quelst[i].ans[1]);
-			$("#op3").html("<input type='radio' name='opt' id='o3' value='2'>"+"<span class='circ' id='ch3'></span>"+quelst[i].ans[2]);
-			$("#op4").html("<input type='radio' name='opt' id='o4' value='3'>"+"<span class='circ' id='ch4'></span>"+quelst[i].ans[3]);
-			$("#submit-button").show();
+			$("#op1").animate({marginRight:'10%'});
+			$("#op2").animate({marginRight:'20%'});
+			$("#op3").animate({marginRight:'15%'});
+			$("#op4").animate({marginRight:'25%'});
+			$("#ques-num, #q, .fade").animate({opacity:0});
+			$("#ques-num").queue(function(n) {
+				$(this).text("Question #"+(i+1)+" out of "+quelst.length);
+				$("#q").text(quelst[i].que);
+				$("#op1").html("<input type='radio' name='opt' id='o1' value='0'>"
+					+"<span class='circ' id='ch1'></span><span class='fade'>"+quelst[i].ans[0]+"</span>");
+				$("#op2").html("<input type='radio' name='opt' id='o2' value='1'>"
+					+"<span class='circ' id='ch2'></span><span class='fade'>"+quelst[i].ans[1]+"</span>");
+				$("#op3").html("<input type='radio' name='opt' id='o3' value='2'>"
+					+"<span class='circ' id='ch3'></span><span class='fade'>"+quelst[i].ans[2]+"</span>");
+				$("#op4").html("<input type='radio' name='opt' id='o4' value='3'>"
+					+"<span class='circ' id='ch4'></span><span class='fade'>"+quelst[i].ans[3]+"</span>");
+				n();
+			});
+			$("#ques-num, #q, .fade").animate({opacity:1});
+			$("#op1, #op2, #op3, #op4").animate({marginRight:''});
+			$("#submit-button").fadeIn(500);
 			$("#submit-button").blur();
 		}
 
-		function reslt() {
-			$("#quiz-page").hide();
-			$("#result-page").show();
+		function showResult() {
+			$("#quiz-page").fadeOut(500);
+			$("#result-page").delay(500).fadeIn(400);
 			$("#score").text("You scored a "+score+" / "+quelst.length);
 			if(score<=4) {
 				$("#eval-msg").text("You need to study more.");
@@ -149,8 +170,8 @@ $(document).ready(function() {
 		}
 
 		$("#view-ans-button").click(function() {
-			$("#result-page").hide();
-			$("#answers-page").show();
+			$("#result-page").fadeOut(250);
+			$("#answers-page").delay(250).fadeIn(250);
 			$(".genAns").each(function(i) {
 				if(wrong.indexOf(i) > -1) {
 					$(this).css('color','#ff6347');

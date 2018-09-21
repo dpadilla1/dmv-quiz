@@ -134,6 +134,9 @@ button:hover {
 			background-color: #C9C9C9;
 			cursor: pointer;
 		}
+		.fade {
+			opacity:1;
+		}
 		#empty-msg {
 			color:red;
 			font-size:40px;
