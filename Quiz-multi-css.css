@@ -1,0 +1,221 @@
+body {
+	background-color:#FFF1DF;
+}
+
+/* Used to Vertically Align Front Page */
+.outer {
+	display: table;
+	position: absolute;
+	height: 95%;
+	width: 95%;
+}
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+/* Vertical Align End*/
+
+/* General Class Style */
+.pages {
+	margin-left: 2%;
+	margin-right: 2%;
+	padding: 5%;
+	background-color: white;
+	border: 5px solid #B68A7E;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 10px 10px 10px -2px gray;
+	-webkit-box-shadow: 10px 10px 10px -2px gray;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 30px;
+}
+button {
+	background-color: #FFF1DF;
+	border:4px solid #B68A7E;
+}
+button:hover {
+	background-color: #B68A7E;
+	cursor:pointer;
+}
+/* Genereal Class Style End */
+
+/* Unique to Pages */
+#front-page {
+	padding-top:19vh;
+	text-align: center;
+	background-image: url('http://i68.tinypic.com/o0rsic.jpg');
+	background-size: cover;
+	color:white;
+	font-family: 'Julius Sans One', sans-serif;
+	height: 50vh;
+}
+		#title {
+			font-size:5vh;
+			font-weight:normal;
+		}
+		#start-button {
+			background-color: rgb(253, 233, 206);
+			font-size:3vh;
+			font-weight:bold;
+			padding:3%;
+			width:40vw;
+			border-radius:20px;
+			-webkit-border-radius:20px;
+            border:4px solid rgb(253, 233, 206);
+            opacity:0.6;
+		}
+		#start-button:hover {
+            /* background-color: #9A6F53;
+            border-color: #9A6F53; */
+            background-color: rgb(253, 233, 206, 0);
+            border-color: white;
+            color:white;
+			cursor: pointer;
+		}
+#quiz-page {
+	margin-top:1%;
+	padding-top:1%;
+	align-self: center;
+    display:none;
+    height:83vh;
+}
+		#ques-num {
+            margin-top:1.5%;
+			margin-bottom:1.5%;
+			text-align: center;
+			max-height: 999999px;
+            -webkit-text-size-adjust: none;
+            font-size: 2.5vh;
+		}
+		#q {
+            margin-bottom:3%;
+            padding-left:2%;
+			height:18vh;
+			font-size:3vh;
+			font-weight: bold;
+			border-radius:5px;
+			max-height: 999999px;
+			-webkit-text-size-adjust: none;
+			align-items: center;
+			display:flex;
+		}
+		.radio {
+			margin-bottom:3%;
+			height:46vh;
+		}
+		/* Hides default radio buttons */
+		.radio input {
+			position: absolute;
+			opacity: 0;
+		}
+		/* Custom Unchecked Buttons */
+		.circ {
+			content:"";
+			display:inline-block;
+			height:1.9vh;
+			width:1.9vh;
+			margin-right: 0.5em;
+			vertical-align: -2px;
+			background-color:transparent;
+			border: 2px solid black;
+			border-radius: 50%;
+			/*padding: 0.13em;
+			background-clip: content-box;*/
+		}
+		/* Custom Checked Button */
+		.radio input:checked ~ .circ {
+			background-color:black;
+		}
+		#op1,#op2,#op3,#op4 {
+			background-color: #EFEFEF;
+			margin-bottom:4%;
+			padding:8px;
+			padding-top: 1%;
+			padding-bottom: 1%;
+			padding-left: 4%;
+			border-radius:25px;
+			-webkit-border-radius:25px;
+			box-shadow:7px 7px 11px 0px gray;
+			-webkit-box-shadow:7px 7px 11px 0px gray;
+			font-size:2.6vh;
+		}
+		#op1:hover,#op2:hover,#op3:hover,#op4:hover {
+			background-color: #C9C9C9;
+			cursor: pointer;
+		}
+		.fade {
+			opacity:1;
+		}
+		#empty-msg {
+            margin-top:5%;
+			color:red;
+			font-size:2.3vh;
+			font-weight:bold;
+			text-align:center;
+			display:none;
+			max-height: 999999px;
+			-webkit-text-size-adjust: none;
+		}
+		#submit-button {
+			padding: 2.9vh;
+			border-radius:30px;
+			width:50vw;
+			font-size:2.5vh;
+			display:block;
+			margin: 0 auto;
+			box-shadow:7px 7px 11px 0px gray;
+			-webkit-box-shadow:7px 7px 11px 0px gray;
+		}
+#result-page {
+    margin-top:29vh;
+    padding-top:5vh;
+	padding-bottom:6vh;
+	text-align: center;
+	display: none;
+}
+		#score {
+			font-size:3.5vh;
+			font-weight: bold;
+			color: black;
+		}
+		#eval-msg {
+			color: black;
+			margin-bottom: 20px;
+		}
+		#view-ans-button {
+			padding: 3%;
+			border-radius:30px;
+			width:70vw;
+			font-size:2.5vh;
+			box-shadow:7px 7px 11px 0px gray;
+			-webkit-box-shadow:7px 7px 11px 0px gray;
+		}
+#answers-page {
+	margin-bottom:25%;
+	margin-top:2%;
+	padding-top:2%;
+	align-self: center;
+	display:none;
+	max-height: 999999px;
+	-webkit-text-size-adjust: none;
+    font-weight: bold;
+    font-size:2.5vh;
+}
+		.genAns {
+			color:#077C00;
+		}
+		.indent {
+			padding-left:2em;
+		}
+		#try-again-button {
+			position:fixed;
+			height:10%;
+			width:100%;
+			bottom:0;
+			left:0;
+			color:black;
+			font-size:2.5vh;
+			font-weight:bold;
+			border: 1px solid #B68A7E;
+		}
+/* PAGES END */
