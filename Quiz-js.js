@@ -55,7 +55,36 @@ $(document).ready(function() {
 			ans:["The car in the intersection", "The car on your right",
 			"The car in the opposite lane of traffic", "The car on your left"],
 			right:"0"};
-		var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11,que12,que13,que14];
+		var que15={que:"FLASH FLOODS CAN CAUSE VEHICLES TO FLOAT AND FILL WITH WATER, TRAPPING AND DROWNING PEOPLE. EVEN __ INCHES OF WATER CAN FLOAT SMALL CARS.",
+			ans:["two", "four",
+			"six", "eight"],
+			right:"2"};
+		var que16={que:"TO AVOID SUDDEN LAST-MINUTE MOVES, HOW FAR AHEAD SHOULD YOU LOOK WHEN SCANNING THE ROAD FOR HAZARDS?",
+			ans:["Four to six seconds", "Six to eight seconds",
+			"10 to 15 seconds", "15 to 30 seconds"],
+			right:"2"};
+		var que17={que:"IF YOU DRIVE AFTER DRINKING, YOU SHOULD BE AWARE THAT THE FIRST THING ALCOHOL AFFECTS IS:",
+			ans:["Your hearing", "Your alertness",
+			"Your vision", "Your judgement"],
+			right:"3"};
+		var que18={que:"WHAT SHOULD YOU DO IF YOUR ACCELERATOR STICKS WHILE YOU ARE DRIVING?",
+			ans:["Concentrate on steering and seeing the road", "Pump the accelerator and try to clear any obstruction",
+			"Shift to neutral, brake and stop off the road, turn on flashers", "All of the above"],
+			right:"3"};
+		var que19={que:"WHEN PARKING YOUR VEHICLE ON ANY HILL:",
+			ans:["One of your rear wheels should touch the curb", "Use your parking brake and leave the vehicle in park",
+			"Your front wheels should be parallel to the road if there is no curb", "Always turn your wheels towards the curb"],
+			right:"1"};
+		var que20={que:"OTHER DRIVERS ARE NOT MAKING ROOM FOR YOU TO MERGE ONTO A FREEWAY WITH HEAVEY TRAFFIC. IF IT IS ABSOLUTLEY NECESSARY, YOU MAY:",
+			ans:["Make room by forcing your way into a small gap", "Reverse and exit the highway through the entrance ramp",
+			"Drive onto a freeway shoulder until a gap appears", "Stop before merging with freeway traffic"],
+			right:"3"};
+		var que21={que:"WHEN A TRUCK DRIVER BEHIND YOU WANTS TO PASS YOUR VEHICLE, YOUR SPEED SHOULD:",
+			ans:["Remain steady or decrease", "Change",
+			"Increase", "You should change lanes"],
+			right:"0"};
+		var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11,que12,que13,que14,que15,
+					que16,que17,que18,que19,que20,que21];
 
 		//randomizes questions
 		for (let i = quelst.length - 1; i > 0; i--) {
