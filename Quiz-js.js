@@ -55,7 +55,7 @@ $(document).ready(function() {
 			ans:["The car in the intersection", "The car on your right",
 			"The car in the opposite lane of traffic", "The car on your left"],
 			right:"0"};
-		var que15={que:"FLASH FLOODS CAN CAUSE VEHICLES TO FLOAT AND FILL WITH WATER, TRAPPING AND DROWNING PEOPLE. EVEN __ INCHES OF WATER CAN FLOAT SMALL CARS.",
+		var que15={que:"FLASH FLOODS CAN CAUSE VEHICLES TO FLOAT AND FILL WITH WATER. EVEN __ INCHES OF WATER CAN FLOAT SMALL CARS.",
 			ans:["two", "four",
 			"six", "eight"],
 			right:"2"};
