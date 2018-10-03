@@ -83,8 +83,28 @@ $(document).ready(function() {
 			ans:["Remain steady or decrease", "Change",
 			"Increase", "You should change lanes"],
 			right:"0"};
+		var que22={que:"WHICH OF THESE STATEMENTS IS TRUE ABOUT MOTORCYCLES?",
+			ans:["Motorcycles are small and are less visible on the road", "Motorcycles may not share traffic lanes",
+			"Motorcycles should be followed at a greater distance", "Motorcycles always have the right-of-way"],
+			right:"0"};
+		var que23={que:"WHEN APPROACHING ANOTHER VEHICLE FROM THE REAR AT NIGHT, YOU MUST DIM YOUR BRIGHT HEADLIGHTS WITHIN:",
+			ans:["100 feet of the other vehicle", "200 feet of the other vehicle",
+			"300 feet of the other vehicle", "600 feet of the other vehicle"],
+			right:"2"};
+		var que24={que:"IF THE ROADWAY IS WET AND YOUR CAR STARTS TO SKID, YOU SHOULD:",
+			ans:["Slowly ease your foot off the gas pedal", "Slow down by shifting to a lower gear",
+			"Slow down by pumping your brakes quickly and firmly", "Slow down by shifting into neutral"],
+			right:"0"};
+		var que25={que:"TRAFFIC FATALITIES ARE ___________ AT NIGHT COMPARED TO DAYTIME.",
+			ans:["about the same", "about twice as high",
+			"about three to four times as high", "about five to six times as high"],
+			right:"2"};
+		var que26={que:"WHEN WAITING TO MAKE A LEFT TURN, YOU SHOULD GIVE THE RIGHT-OF-WAY TO VEHICLES COMING FROM THE OPPOSITE DIRECTION:",
+			ans:["Until at least two vehicles have passed", "Until dangerously close cars have passed",
+			"Until all of the cars have passed", "Until your traffic signal starts changing to red, then you have to make a turn even if there are vehicles in the intersection"],
+			right:"1"};
 		var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11,que12,que13,que14,que15,
-					que16,que17,que18,que19,que20,que21];
+					que16,que17,que18,que19,que20,que21,que22,que23,que24,que25,que26];
 
 		//randomizes questions
 		for (let i = quelst.length - 1; i > 0; i--) {
