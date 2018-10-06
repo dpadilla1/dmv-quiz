@@ -103,8 +103,28 @@ $(document).ready(function() {
 			ans:["Until at least two vehicles have passed", "Until dangerously close cars have passed",
 			"Until all of the cars have passed", "Until your traffic signal starts changing to red, then you have to make a turn even if there are vehicles in the intersection"],
 			right:"1"};
+		var que27={que:"IF YOUR VEHICLE BREAKS DOWN, YOU SHOULD:",
+			ans:["Pull off of the road as far as possible, while still visible", "Turn on four-way flashers and open your hood (if not wet out)",
+			"Place emergency flares/signs 100 feet around your vehicle", "All of the above"],
+			right:"3"};
+		var que28={que:"GENERALLY SPEAKINGS, YOU ARE IN A LARGE TRUCK'S BLIND SPOT IF YOU:",
+			ans:["Drive close to the large truck's left front wheel", "Cannot see the truck driver in the truck's side mirrors",
+			"Follow no closer than ten feet behind the large truck", "All of the above"],
+			right:"1"};
+		var que29={que:"AT NIGHT, IF AN ONCOMING VEHICLE FAILS TO DIM ITS HIGH-BEAMS, LOOK:",
+			ans:["Toward the center of the roadway", "Toward the right edge of your lane",
+			"Toward the left edge of your lane", "Straight ahead in your lane"],
+			right:"1"};
+		var que30={que:"WHEN A YELLOW ARROW APPEARS AS YOU WAIT IN A DEDICATED RIGHT TURN LANE, YOU SHOULD:",
+			ans:["Be prepared to obey the next signal that appears", "Check for pedestrians and then turn with caution",
+			"Stop and do not make the turn under any circumstances", "Accelerate to complete the turn quicker"],
+			right:"0"};
+		var que31={que:"IF YOU ARE BEING TAILGATED, YOU SHOULD:",
+			ans:["Brake quickly", "Signal the tailgater when it is safe to pass you",
+			"Increase your following distance", "Honk your horn and use your emergency indicators"],
+			right:"2"};
 		var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10,que11,que12,que13,que14,que15,
-					que16,que17,que18,que19,que20,que21,que22,que23,que24,que25,que26];
+					que16,que17,que18,que19,que20,que21,que22,que23,que24,que25,que26,que27,que28,que29,que30,que31];
 
 		//randomizes questions
 		for (let i = quelst.length - 1; i > 0; i--) {
@@ -207,14 +227,14 @@ $(document).ready(function() {
 			$("#quiz-page").fadeOut(500);
 			$("#result-page").delay(500).fadeIn(400);
 			$("#score").text("You scored a "+score+" / "+quelst.length);
-			if(score<=4) {
-				$("#eval-msg").text("You need to study more.");
+			if(score<=21) {
+				$("#eval-msg").text("You got some work to do :(");
 			}
-			else if(score<8) {
-				$("#eval-msg").text("Decent, but there's more work to do.");
+			else if(score<28) {
+				$("#eval-msg").text("Good! But try to understand the ones you got wrong :)");
 			}
 			else {
-				$("#eval-msg").text("Excellent!");
+				$("#eval-msg").text("Great job!");
 			}
 		}
 
