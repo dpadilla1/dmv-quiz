@@ -47,6 +47,7 @@ button:hover {
 	background-size: cover;
 	color:white;
 	font-family: 'Julius Sans One', sans-serif;
+	font-size:2vh;
 	height: 50vh;
 }
 		#title {
